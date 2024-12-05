@@ -131,7 +131,7 @@ const Content = () => {
           content={
             <p className="text-xl">
               With 5 years of experience in web development, my passion lies in creating innovative 
-              solutions and pushing the boundaries of what's possible in technology. I'm constantly 
+              solutions and pushing the boundaries of what&apos;s possible in technology. I&apos;m constantly 
               learning and adapting to new technologies to deliver the best possible solutions for my clients.
             </p>
           }
