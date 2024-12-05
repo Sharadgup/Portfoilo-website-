@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-mandatory > * {
+  scroll-snap-align: start;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Hover effect for block items */
+.bg-gray-800 {
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-gray-800:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation bar styles */
+nav {
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Loading bar hover effect */
+.bg-gray-700:hover .bg-blue-500 {
+  filter: brightness(1.2);
+}
+
+.bg-gray-700:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Enhanced loading bar styles */
+.bg-gray-700 {
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+.bg-blue-500 {
+  background: linear-gradient(90deg, #4A90E2, #63B3ED);
+}
+
+.bg-gray-700:hover .bg-blue-500 {
+  filter: brightness(1.2);
+  transition: filter 0.3s ease-in-out;
+}
+
+.bg-gray-700:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
