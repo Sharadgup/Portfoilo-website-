@@ -1,8 +1,9 @@
- @tailwind base;
- @tailwind components;
- @tailwind utilities;
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
+/* Your custom styles */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
@@ -131,4 +132,3 @@ nav a:hover::after {
 .animate-pulse {
   animation: pulse 2s infinite;
 }
-
