@@ -1,3 +1,25 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "tailwindcss"],
+  "rules": {
+    // Custom rules can be added here
+    "tailwindcss/classnames-order": "warn", // Warn if Tailwind classes are not in a logical order
+    "tailwindcss/enforces-shorthand": "warn", // Prefer shorthand classes like `p-4` instead of `pt-4 pr-4 pb-4 pl-4`
+    "tailwindcss/no-custom-classname": "off" // Turn off warnings for custom class names
+  }
 }
