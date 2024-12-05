@@ -75,6 +75,7 @@ const AnimatedBackground = () => {
     return () => {
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('mousemove', handleMouseMove)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       mountRef.current?.removeChild(renderer.domElement)
     }
   }, [])
