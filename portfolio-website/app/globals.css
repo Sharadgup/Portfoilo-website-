@@ -1,8 +1,6 @@
-/* stylelint-disable */
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-/* stylelint-enable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --foreground-rgb: 255, 255, 255;
