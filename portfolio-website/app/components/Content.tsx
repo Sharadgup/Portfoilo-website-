@@ -117,7 +117,7 @@ const Content = () => {
           title="Welcome to My Portfolio"
           content={
             <div className="text-center">
-              <Image src="/placeholder.svg" alt="Sharad Gupta" width={200} height={200} className="rounded-full mx-auto mb-8" />
+              <Image src="image/profit.jpg" alt="Sharad Gupta" width={200} height={200} className="rounded-full mx-auto mb-8" />
               <p className="text-2xl">
                 Welcome to my professional portfolio! I’m Sharad Gupta, a passionate Ai Engineer enthusiast with a Master’s degree in Computer Application from Jabalpur Engineering College. Skilled in Python, R, SQL, and cutting-edge tools like TensorFlow and Tableau, I specialize in creating AI-powered solutions for real-world challenges.
 
