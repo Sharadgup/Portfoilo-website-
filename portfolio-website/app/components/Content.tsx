@@ -95,7 +95,7 @@ const BlockItem = ({ title, subtitle, description, imageSrc }: { title: string, 
 }
 
 const Content = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', profileImage: '' })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -105,7 +105,7 @@ const Content = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', message: '' })
+    setFormData({ name: '', email: '', message: '', profileImage: '' })
   }
 
   return (
@@ -117,7 +117,13 @@ const Content = () => {
           title="Welcome to My Portfolio"
           content={
             <div className="text-center">
-              <Image src="image/profit.jpg" alt="Sharad Gupta" width={200} height={200} className="rounded-full mx-auto mb-8" />
+              <Image 
+                src={formData.profileImage || "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20200721_102513%20(2).jpg-6WnFUiSqVLilBQJiXMViSDlEtqRg79.jpeg"} 
+                alt="Sharad Gupta" 
+                width={200} 
+                height={200} 
+                className="rounded-full mx-auto mb-8 object-cover"
+              />
               <p className="text-2xl">
                 Welcome to my professional portfolio! I’m Sharad Gupta, a passionate Ai Engineer enthusiast with a Master’s degree in Computer Application from Jabalpur Engineering College. Skilled in Python, R, SQL, and cutting-edge tools like TensorFlow and Tableau, I specialize in creating AI-powered solutions for real-world challenges.
 
@@ -131,7 +137,7 @@ const Content = () => {
           content={
             <p className="text-xl">
               With 5 years of experience in web development, my passion lies in creating innovative 
-              solutions and pushing the boundaries of what&apos;s possible in technology. I&apos;m constantly 
+              solutions and pushing the boundaries of what's possible in technology. I'm constantly 
               learning and adapting to new technologies to deliver the best possible solutions for my clients.
             </p>
           }
