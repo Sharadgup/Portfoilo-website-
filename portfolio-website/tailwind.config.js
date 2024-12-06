@@ -30,11 +30,10 @@ export const theme = {
             'default': '0 0 20px rgba(74, 144, 226, 0.5)', // Custom shadow for .bg-gray-700
         },
     },
+
+    plugins: [
+        // eslint-disable-next-line no-undef
+        require('@tailwindcss/forms'),
+    ], 
 };
-export const plugins = [
-    // eslint-disable-next-line no-undef
-    require('@tailwindcss/forms'),
-    // eslint-disable-next-line no-undef
-    require('@tailwindcss/typography'),
-];
   
