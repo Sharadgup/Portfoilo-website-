@@ -4,17 +4,12 @@ import { useEffect } from 'react'
 
 export default function AttributeRemover() {
   useEffect(() => {
-    // Remove any attributes added by browser extensions
-    const html = document.documentElement;
-    const attributesToRemove = ['data-qb-installed'];
-    
-    attributesToRemove.forEach(attr => {
-      if (html.hasAttribute(attr)) {
-        html.removeAttribute(attr);
-      }
-    });
-  }, []);
+    const html = document.documentElement
+    if (html.hasAttribute('data-qb-installed')) {
+      html.removeAttribute('data-qb-installed')
+    }
+  }, [])
 
-  return null;
+  return null
 }
 

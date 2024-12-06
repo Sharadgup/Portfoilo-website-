@@ -1,16 +1,24 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { MapPin, Mail, Phone, Menu } from 'lucide-react'
-import Image from 'next/image'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { MapPin, Mail, Phone, Menu } from "lucide-react";
+import Image from "next/image";
 
-const Section = ({ id, title, content }: { id: string, title: string; content: React.ReactNode }) => {
+const Section = ({
+  id,
+  title,
+  content,
+}: {
+  id: string;
+  title: string;
+  content: React.ReactNode;
+}) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <motion.section
@@ -26,23 +34,31 @@ const Section = ({ id, title, content }: { id: string, title: string; content: R
         {content}
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ['Home', 'About', 'Education', 'Experience', 'Projects', 'Achievements', 'Contact']
+  const navItems = [
+    "Home",
+    "About",
+    "Education",
+    "Experience",
+    "Projects",
+    "Achievements",
+    "Contact",
+  ];
 
   const navVariants = {
     open: { x: 0 },
-    closed: { x: '100%' },
-  }
+    closed: { x: "100%" },
+  };
 
   const itemVariants = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: 20 },
-  }
+  };
 
   return (
     <>
@@ -75,38 +91,60 @@ const NavBar = () => {
         </ul>
       </motion.nav>
     </>
-  )
-}
+  );
+};
 
-const BlockItem = ({ title, subtitle, description, imageSrc }: { title: string, subtitle: string, description: string, imageSrc: string }) => {
+const BlockItem = ({
+  title,
+  subtitle,
+  description,
+  imageSrc,
+}: {
+  title: string;
+  subtitle: string;
+  description: string;
+  imageSrc: string;
+}) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
       className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
     >
-      <Image src={imageSrc} alt={title} width={400} height={250} className="w-full h-48 object-cover" />
+      <Image
+        src={imageSrc}
+        alt={title}
+        width={400}
+        height={250}
+        className="w-full h-48 object-cover"
+      />
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <h4 className="text-lg text-gray-400 mb-4">{subtitle}</h4>
         <p>{description}</p>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const Content = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', profileImage: '' })
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prevState => ({ ...prevState, [name]: value }))
-  }
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', message: '', profileImage: '' })
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <>
@@ -117,16 +155,21 @@ const Content = () => {
           title="Welcome to My Portfolio"
           content={
             <div className="text-center">
-              <Image 
-                src={formData.profileImage || "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20200721_102513%20(2).jpg-6WnFUiSqVLilBQJiXMViSDlEtqRg79.jpeg"} 
-                alt="Sharad Gupta" 
-                width={200} 
-                height={200} 
+              <Image
+                src="/Profit.jpg"
+                alt="Local Image"
+                width={200}
+                height={200}
                 className="rounded-full mx-auto mb-8 object-cover"
               />
-              <p className="text-2xl">
-                Welcome to my professional portfolio! I’m Sharad Gupta, a passionate Ai Engineer enthusiast with a Master’s degree in Computer Application from Jabalpur Engineering College. Skilled in Python, R, SQL, and cutting-edge tools like TensorFlow and Tableau, I specialize in creating AI-powered solutions for real-world challenges.
 
+              <p className="text-2xl">
+                Welcome to my professional portfolio! I'm Sharad Gupta, a
+                passionate AI Engineer enthusiast with a Master's degree in
+                Computer Application from Jabalpur Engineering College. Skilled
+                in Python, R, SQL, and cutting-edge tools like TensorFlow and
+                Tableau, I specialize in creating AI-powered solutions for
+                real-world challenges.
               </p>
             </div>
           }
@@ -136,9 +179,19 @@ const Content = () => {
           title="About Me"
           content={
             <p className="text-xl">
-              With 5 years of experience in web development, my passion lies in creating innovative 
-              solutions and pushing the boundaries of what's possible in technology. I'm constantly 
-              learning and adapting to new technologies to deliver the best possible solutions for my clients.
+              I’m Sharad Gupta, a passionate Ai Engineer enthusiast with a
+              Master’s degree in Computer Application from Jabalpur Engineering
+              College. Skilled in Python, R, SQL, and cutting-edge tools like
+              TensorFlow and Tableau, I specialize in creating AI-powered
+              solutions for real-world challenges. My journey includes impactful
+              projects like an Automated Chest X-Ray Diagnostic System,
+              leveraging GANs for accurate lung issue detection, and a Rating
+              Prediction System, achieving 96.99% precision with advanced ML
+              algorithms. My internship at Cognifyz Technologies honed my
+              expertise in data preprocessing, feature engineering, and building
+              predictive models. Explore my work, achievements, and technical
+              innovations as I strive to transform ideas into impactful
+              solutions!
             </p>
           }
         />
@@ -148,16 +201,16 @@ const Content = () => {
           content={
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <BlockItem
-                title="Bachelor of Science in Computer Science"
-                subtitle="University of Technology"
-                description="Graduated with honors, focusing on web technologies and software engineering."
-                imageSrc="/placeholder.svg"
+                title="Master of Computer Application (M.C.A)"
+                subtitle="Jabalpur Engineering Collage"
+                description="Through this Degree.I got Opportunities in Ai and Data Science and NeuroRobotics through which I was able to learn advanced level technology and with the help of this degree, I am was able to do high level and good projects in this field and I am AI engineer in this field."
+                imageSrc="/college.jfif"
               />
               <BlockItem
                 title="Full Stack Web Development Bootcamp"
                 subtitle="Tech Academy"
                 description="Intensive 12-week program covering modern web development technologies and practices."
-                imageSrc="/placeholder.svg"
+                imageSrc="/eduction.svg"
               />
             </div>
           }
@@ -236,7 +289,12 @@ const Content = () => {
               <div>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300">Name</label>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-300"
+                    >
+                      Name
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -248,7 +306,12 @@ const Content = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email</label>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-300"
+                    >
+                      Email
+                    </label>
                     <input
                       type="email"
                       id="email"
@@ -260,7 +323,12 @@ const Content = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-300"
+                    >
+                      Message
+                    </label>
                     <textarea
                       id="message"
                       name="message"
@@ -271,14 +339,22 @@ const Content = () => {
                       className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white"
                     ></textarea>
                   </div>
-                  <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  <button
+                    type="submit"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  >
                     Send Message
                   </button>
                 </form>
                 <div className="mt-8 space-y-2">
                   <p className="flex items-center">
                     <Mail className="mr-2" size={18} />
-                    <a href="mailto:john.doe@gmail.com" className="hover:underline">john.doe@gmail.com</a>
+                    <a
+                      href="mailto:john.doe@gmail.com"
+                      className="hover:underline"
+                    >
+                      john.doe@gmail.com
+                    </a>
                   </p>
                   <p className="flex items-center">
                     <Phone className="mr-2" size={18} />
@@ -305,8 +381,7 @@ const Content = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Content
-
+export default Content;
