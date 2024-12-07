@@ -128,38 +128,6 @@ const BlockItem = ({
   );
 };
 
-const SectionDownload = () => {
-  return (
-    <motion.section
-      id="download"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen flex flex-col items-center justify-center snap-start py-16"
-    >
-      <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 max-w-4xl w-full text-center">
-        <h2 className="text-4xl font-bold mb-8">Download My Resume</h2>
-        <p className="text-xl mb-8">
-          Get a closer look at my skills, experience, and achievements. Download
-          my resume and let's connect!
-        </p>
-
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="inline-block bg-blue-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg cursor-pointer"
-        >
-          <a
-            href="/resume.pdf"
-            download
-            className="block text-xl hover:underline"
-          >
-            Click to Download
-          </a>
-        </motion.div>
-      </div>
-    </motion.section>
-  );
-};
 
 const Content = () => {
   const [formData, setFormData] = useState({
