@@ -6,7 +6,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:next/core-web-vitals",
+    "next"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -15,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "tailwindcss"],
+  "plugins": ["react", "tailwindcss","next","@typescript-eslint"],
   "rules": {
     // Custom rules can be added here
     "tailwindcss/classnames-order": "warn", // Warn if Tailwind classes are not in a logical order
