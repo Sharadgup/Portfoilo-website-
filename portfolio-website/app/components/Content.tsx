@@ -104,7 +104,7 @@ const BlockItem = ({
 }: {
   title: string;
   subtitle: string;
-  description: string;
+  description: React.ReactNode; // Allow JSX elements;
   imageSrc: string;
 }) => {
   return (
@@ -127,7 +127,6 @@ const BlockItem = ({
     </motion.div>
   );
 };
-
 
 const Content = () => {
   const [formData, setFormData] = useState({
@@ -250,16 +249,16 @@ const Content = () => {
           content={
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <BlockItem
-                title="Senior Web Developer"
-                subtitle="Tech Solutions Inc. | 2019 - Present"
-                description="Lead developer for multiple high-profile client projects, focusing on React and Node.js applications."
-                imageSrc="/placeholder.svg"
+                title="Data Science Intern"
+                subtitle="Cognifyz Technologies. | April 2024 - May 2024"
+                description="As a Data Science Intern, you will have the opportunity to work on variour project and tasks, analyze complex Datasets and derive meaningful insights ."
+                imageSrc="/experience1.jfif"
               />
               <BlockItem
-                title="Full Stack Developer"
-                subtitle="Web Innovators | 2016 - 2019"
-                description="Developed and maintained various web applications using JavaScript, PHP, and MySQL."
-                imageSrc="/placeholder.svg"
+                title="Machine learning Internship"
+                subtitle="PHN Technology Pvt.Ltd | April 2023 - June 2023"
+                description="Hi there my past Experience for PHN Technology Machine learning internship for give me opportunity for work project to development for skills and core concept for working contrbution for Knowledge these Organization include."
+                imageSrc="/Expericenc2.jfif"
               />
             </div>
           }
@@ -270,24 +269,62 @@ const Content = () => {
           content={
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <BlockItem
-                title="E-commerce Platform"
-                subtitle="React, Node.js, MongoDB"
-                description="A fully-featured online store with user authentication, product management, and payment integration."
-                imageSrc="/placeholder.svg"
+                title="Plant Disaster Prediction App Based on Real-World Data | october 2024 - Present "
+                subtitle="Android native, TensorFlow, Numpy, Pandas, Scikit-learn, Computer Vision, Deep Learning Algorithm, FastAPI, Firebase Database, Firebase Cloud, NeuralScheme Connect."
+                description={
+                 <>
+                  The Plants Disease Prediction System is an advanced, AI-powered hybrid Android application designed to assist plant enthusiasts, gardeners, and farmers. Built using the versatile React Native framework, the app integrates artificial intelligence (AI) to provide accurate plant health diagnoses, actionable treatment recommendations, and robust tracking features for optimal plant care.{' '}
+                  <a
+                       href="https://drive.google.com/drive/folders/1F0LIA5rYVN_qbEVKKQEuwkb7pnBYid5X?usp=sharing"
+                        target="_blank"
+                       rel="noopener noreferrer"
+                     style={{ color: 'white', textDecoration: 'underline' }}
+                  >
+                    Learn more Link 
+                  </a>
+                  .
+                 </>
+                }
+               imageSrc="/Android app named 'Plants Disease Prediction System'. The design showcases its AI-driven features with.png"
+               />
+              <BlockItem
+                title="Rating Prediction System | April 2024 – May 2024 Streamlit App"
+                subtitle="Python, Deep Learning, Computer Vision, TensorFlow, Scikit-Learn, Pandas, Numpy, Streamlit App, Streamlit Web Cloud, API, Google Database System"
+                description={
+                 <>
+                 Web application for rating predictions. ML Implementation: Algorithms analyze data for accurate predictions achieving <strong>96.99%</strong> accuracy. Learn more about the project{' '}
+                 <a
+                  href="https://github.com/Sharadgup/Project-for-Cognifyz-technologies-Data-Science.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'white', textDecoration: 'underline' }}
+                 >
+                   Learn more Link
+                </a>.
+                </>
+              }
+               imageSrc="/Project3.png"
               />
               <BlockItem
-                title="Task Management App"
-                subtitle="Vue.js, Express, PostgreSQL"
-                description="A collaborative task management tool with real-time updates and team features."
-                imageSrc="/placeholder.svg"
-              />
-              <BlockItem
-                title="Social Media Dashboard"
-                subtitle="React, GraphQL, AWS"
-                description="A comprehensive dashboard for managing multiple social media accounts with analytics and scheduling features."
-                imageSrc="/placeholder.svg"
-              />
-            </div>
+                 title="Automated Chest X-Ray Diagnosis System | January 2024 – March 2024"
+                 subtitle="Python, Deep Learning, Computer Vision, TensorFlow, Scikit-Learn, Pandas, NumPy, AI, Neural Networks."
+                 description={
+                       <>
+                       Developed Automated X-Ray Diagnosis System: Used deep learning, specifically GANs, to boost accuracy in spotting lung issues. Utilized GANs for Synthetic Images: Enhanced training data diversity for a more powerful diagnostic model. Accurate predictions achieved: 
+                       <strong>96.99%</strong> training accuracy and <strong>75.09%</strong> test accuracy. Learn more about the project{' '}
+                      <a
+                       href="https://github.com/Sharadgup/automatics-chest-X-Ray-Diagonals-system-.git"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style={{ color: 'white', textDecoration: 'underline' }}
+                      >
+                       Learn more Link
+                      </a>.
+                       </>
+                        }
+                      imageSrc="/project 1.jfif"
+                />
+             </div>
           }
         />
         <Section
@@ -296,17 +333,42 @@ const Content = () => {
           content={
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <BlockItem
-                title="Best Web App Award"
-                subtitle="Tech Innovators Conference 2022"
-                description="Received the top prize for the most innovative web application at the annual Tech Innovators Conference."
-                imageSrc="/placeholder.svg"
+               title="Open Source Contributor"
+               subtitle="OCR App Receipt"
+               description={
+               <>
+               In OCR App, I am contributing on the AI model OCR model to Receipt model whose aim is to feed the correct data extract by processing the image, and Feature to fiting procress to data arrangnment to table format and export the data it to Tally prime api help to export excel field store data.{' '}
+               <a
+                  href="underwork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                 style={{ color: 'white', textDecoration: 'underline' }}
+                >
+                   Learn more here.
+               </a>
+               </>
+              }  
+                imageSrc="/images45.jpg"
               />
+
               <BlockItem
                 title="Open Source Contributor"
-                subtitle="React Community"
-                description="Active contributor to several popular React libraries, with over 500 GitHub stars on personal projects."
-                imageSrc="/placeholder.svg"
-              />
+                subtitle="Tavite-College-user"
+                description={
+                 <>
+                   Welcome to the revolutionary realm of education and collaboration with the Tavite College App, a pioneering Android application that embodies a paradigm shift in learning. At its core, Tavite College App is an intersection of cutting-edge technology, artificial intelligence, and creative collaboration, designed to transcend traditional boundaries.{' '}
+                 <a
+                   href="https://github.com/Sharadgup/Tavite-College-user.git"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style={{ color: 'white', textDecoration: 'underline' }}
+                  >
+                   GitHub
+                 </a>.
+                 </>
+                 }
+                   imageSrc="/tavite.jpg"
+                 />
             </div>
           }
         />
@@ -427,25 +489,25 @@ const Content = () => {
                   <p className="flex items-center">
                     <Mail className="mr-2" size={18} />
                     <a
-                      href="mailto:john.doe@gmail.com"
+                      href="shardgupta65@gmail.com"
                       className="hover:underline"
                     >
-                      john.doe@gmail.com
+                      shardgupta65@gmail.com
                     </a>
                   </p>
                   <p className="flex items-center">
                     <Phone className="mr-2" size={18} />
-                    <span>+1 (234) 567-8900</span>
+                    <span>+91 9617173355</span>
                   </p>
                   <p className="flex items-center">
                     <MapPin className="mr-2" size={18} />
-                    <span>New York City, USA</span>
+                    <span>Jabalpur Madhya Pradesh India</span>
                   </p>
                 </div>
               </div>
               <div className="h-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304603!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1619395418707!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6886.421049471057!2d79.9494979621452!3d23.182463328477755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae5f741802d7%3A0x683fea101780f4b4!2sLalmati%2C%20Jabalpur%2C%20Madhya%20Pradesh%20482002!5e1!3m2!1sen!2sin!4v1733673403611!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
