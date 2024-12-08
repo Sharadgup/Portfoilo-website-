@@ -3,19 +3,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { MapPin, Mail, Phone, Menu } from "lucide-react";
+import { MapPin, Mail, Phone, Menu, Download } from "lucide-react";
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa"; // Replace with the correct icons from your icon library.
+import SocialIcon from "./SocialIcon";
+//import SocialIcon from "/components/SocialIcon"; // Adjust to the correct path
+
 //import { motion } from 'framer-motion';
 
-const Section = ({
-  id,
-  title,
-  content,
+function Section({
+  id, title, content,
 }: {
   id: string;
   title: string;
   content: React.ReactNode;
-}) => {
+}) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -36,7 +38,7 @@ const Section = ({
       </div>
     </motion.section>
   );
-};
+}
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +51,8 @@ const NavBar = () => {
     "Projects",
     "Achievements",
     "Contact",
-    //"Download",
+    "download",
+    "social Network",
   ];
 
   const navVariants = {
@@ -518,6 +521,37 @@ const Content = () => {
             </div>
           }
         />
+         <Section
+          id="download"
+          title="Download Resume"
+          content={
+            <div className="text-center">
+              <motion.a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="mr-2" size={20} />
+                Download Resume
+              </motion.a>
+            </div>
+          }
+        />
+        <Section
+          id="social Network"
+          title="Connect With Me"
+          content={
+            <div className="flex justify-center space-x-6">
+              <SocialIcon Icon={FaGithub} href="https://github.com/Sharadgup" ariaLabel={"GitHub Profile"} />
+              <SocialIcon Icon={FaLinkedin} href="https://www.linkedin.com/in/shardgupta2024/" ariaLabel={"LinkedIn Profile"} />
+              <SocialIcon Icon={FaTwitter} href="https://x.com/sharadG75546208" ariaLabel={"Twitter Profile"} />
+              <SocialIcon Icon={FaYoutube} href="https://www.youtube.com/@techtoyaiindia5293/featured" ariaLabel={"Youtube Profile"} />
+            </div>
+          }
+        />
+
       </div>
     </>
   );
