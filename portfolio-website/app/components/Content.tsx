@@ -1,16 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { MapPin, Mail, Phone, Menu, Download } from "lucide-react";
+import { MapPin, Mail, Phone, Menu, Download, VolumeIcon as VolumeUp, VolumeX  } from "lucide-react";
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa"; // Replace with the correct icons from your icon library.
 import SocialIcon from "./SocialIcon";
-//import SocialIcon from "/components/SocialIcon"; // Adjust to the correct path
+import { useSpeechSynthesis } from 'react-speech-kit'
 
-//import { motion } from 'framer-motion';
+  function TextToSpeech({ content }: { content: string; }) {
+  const { speak, speaking, supported, cancel } = useSpeechSynthesis();
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
+  const toggleSpeech = () => {
+    if (isSpeaking) {
+      cancel();
+      setIsSpeaking(false);
+    } else {
+      speak({ text: content });
+      setIsSpeaking(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!speaking) {
+      setIsSpeaking(false);
+    }
+  }, [speaking]);
+
+  if (!supported) {
+    return null;
+  }
+
+  return (
+    <div className="fixed top-1/2 right-4 transform -translate-y-1/2 flex flex-col space-y-2 z-50">
+      <button
+        onClick={toggleSpeech}
+        className="bg-blue-500 text-white p-2 rounded"
+        aria-label={isSpeaking ? "Stop speech" : "Start speech"}
+      >
+        {isSpeaking ? <VolumeX size={24} /> : <VolumeUp size={24} />}
+      </button>
+    </div>
+  );
+}
 function Section({
   id, title, content,
 }: {

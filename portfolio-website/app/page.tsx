@@ -4,12 +4,17 @@ import { useState, useEffect } from 'react'
 import AnimatedLoadingBar from './components/AnimatedLoadingBar'
 import AnimatedBackground from './components/AnimatedBackground'
 import Content from './components/Content'
+import TextToSpeech from './components/TextToSpeech'; // Adjust path to where you store the component
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [content, setContent] = useState<string>("");
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 6000) // Increased to 6 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setContent("Content.tsx!");
+    }, 6000); // Increased to 6 seconds  
     return () => clearTimeout(timer)
   }, [])
 
@@ -21,6 +26,8 @@ export default function Home() {
       ) : (
         <Content />
       )}
+     {/* Include the TextToSpeech component and pass dynamic content */}
+     <TextToSpeech content={content} />
     </main>
   )
 }

@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['your-image-domain.com'],
-    },
-  }
-  
-  export default nextConfig
-  
+  reactStrictMode: true,
+  images: {
+    domains: ['hebbkx1anhila5yf.public.blob.vercel-storage.com', 'drive.google.com'],
+  },
+  experimental: {
+    appDir: true,
+  },
+}
+
+module.exports = nextConfig
+
