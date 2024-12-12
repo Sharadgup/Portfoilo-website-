@@ -1,13 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['hebbkx1anhila5yf.public.blob.vercel-storage.com', 'drive.google.com'],
-  },
   experimental: {
-    appDir: true,
+    // Remove or adjust experimental options
   },
-}
+};
 
-module.exports = nextConfig
-
+export default nextConfig;
