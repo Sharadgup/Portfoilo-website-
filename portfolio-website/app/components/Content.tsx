@@ -269,13 +269,13 @@ const Content = () => {
                 title="Master of Computer Application (M.C.A)"
                 subtitle="Jabalpur Engineering Collage"
                 description="Through this Degree.I got Opportunities in Ai and Data Science and NeuroRobotics through which I was able to learn advanced level technology and with the help of this degree, I am was able to do high level and good projects in this field and I am AI engineer in this field."
-                imageSrc="/college.jfif"
+                imageSrc="/college.png"
               />
               <BlockItem
                 title="Bachelor of Computer Application (B.C.A)"
                 subtitle="Makhanlal Chaturvedi National University of Journalism and Communication, Bhopal, Madhya Pradesh, India."
                 description="Here I learned and understand about variour types of Computer Application and Technology and from here I started My Python and AI jounery many scopes "
-                imageSrc="/bcacollege.jfif"
+                imageSrc="/bcacollege.png"
               />
             </div>
           }
@@ -289,13 +289,13 @@ const Content = () => {
                 title="Data Science Intern"
                 subtitle="Cognifyz Technologies. | April 2024 - May 2024"
                 description="As a Data Science Intern, you will have the opportunity to work on variour project and tasks, analyze complex Datasets and derive meaningful insights ."
-                imageSrc="/experience1.jfif"
+                imageSrc="/experience1.png"
               />
               <BlockItem
                 title="Machine learning Internship"
                 subtitle="PHN Technology Pvt.Ltd | April 2023 - June 2023"
                 description="Hi there my past Experience for PHN Technology Machine learning internship for give me opportunity for work project to development for skills and core concept for working contrbution for Knowledge these Organization include."
-                imageSrc="/Expericenc2.jfif"
+                imageSrc="/Expericenc2.png"
               />
             </div>
           }
@@ -359,7 +359,7 @@ const Content = () => {
                       </a>.
                        </>
                         }
-                      imageSrc="/project 1.jfif"
+                      imageSrc="/project 1.png"
                 />
              </div>
           }
