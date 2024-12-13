@@ -328,7 +328,7 @@ const Content = () => {
           content={
             <div className="text-center">
               <motion.a
-                href="/resume.pdf"
+                href="/resume PDF 2024 SharadGupta (2).pdf"
                 download
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
                 whileHover={{ scale: 1.05 }}
