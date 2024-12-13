@@ -86,7 +86,7 @@ const NavBar = () => {
     "Achievements",
     "Contact",
     "download",
-    "social Network",
+    "socialNetwork",
   ];
 
   const navVariants = {
@@ -574,7 +574,7 @@ const Content = () => {
           }
         />
         <Section
-          id="social Network"
+          id="socialNetwork"
           title="Connect With Me"
           content={
             <div className="flex justify-center space-x-6">
